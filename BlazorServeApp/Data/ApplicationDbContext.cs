@@ -15,7 +15,7 @@ namespace BlazorServeApp.Data
         }
 
 
-        public DbSet<GroupsClass> Groups { get; set; }
-        public DbSet<UserClass> User { get; set; }
+        public DbSet<GroupsListClass> Groups { get; set; }
+        public DbSet<UserListClass> User { get; set; }
     }
 }

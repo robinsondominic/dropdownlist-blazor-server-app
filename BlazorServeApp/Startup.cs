@@ -41,8 +41,8 @@ namespace BlazorServeApp
             services.AddServerSideBlazor();
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
             services.AddSingleton<WeatherForecastService>();
-            services.AddScoped<GroupsService>(); //
-            services.AddScoped<UserService>(); //
+            services.AddScoped<GroupsListService>(); //
+            services.AddScoped<UserListService>(); //
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

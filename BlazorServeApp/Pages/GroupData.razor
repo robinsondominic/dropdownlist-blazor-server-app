@@ -2,10 +2,10 @@
 @using BlazorServeApp.Data
 @using BlazorServeApp.Models
 @using BlazorServeApp.Services
-@inherits OwningComponentBase<GroupsService>
+@inherits OwningComponentBase<GroupsListService>
 
 
-<h3>Group Data In Dropdown List</h3>
+<h3>Group Data </h3>
 
 
 
@@ -28,14 +28,14 @@
     <div class="col-md-4">
         <select class="form-control" onchange="">
             <option value="">-- Select User --</option>
-            @*@if (usrobj != null)
-        {
-            @foreach (var item in usrobj)
+            @if (usrobj != null)
             {
-                <option value="@usrobj.Email">@usrobj.Email</option>
+                @foreach (var item in usrobj)
+                {
+                    <option value="@item.Email">@item.Email</option>
 
+                }
             }
-        }*@
         </select>
     </div>
 </div>
@@ -57,13 +57,13 @@
     <div class="col-md-4">
         <select class="form-control" onchange="">
             <option value="">-- Select Group --</option>
-            
-                    @foreach (var item in grobj)
-                    {
-                        <option value="@item.Groups">@item.Groups</option>
+            @if (grobj != null)
+                @foreach (var item in grobj)
+                {
+                    <option value="@item.Groups">@item.Groups</option>
 
-                    }
-               
+                }
+            }
         </select>
     </div>
 </div>
@@ -72,15 +72,20 @@
 
 @code {
 
-    List<GroupsClass> grobj;
+    List<GroupsListClass> grobj;
+    List<UserListClass> usrobj;
+
+    //List<UserListClass> users = new List<UserListClass>();
 
 
     protected override void OnInitialized()
     {
         //base.OnInitialized();
         grobj = Service.groupsobj();
-        
+        usrobj= Service.usersobj();
     }
 
- 
+
+
+
 }

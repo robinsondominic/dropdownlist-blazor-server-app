@@ -76,28 +76,28 @@ using BlazorServeApp.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\GroupData.razor"
+#line 9 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\DeviceManagement.razor"
 using BlazorServeApp.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\GroupData.razor"
+#line 10 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\DeviceManagement.razor"
 using BlazorServeApp.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\GroupData.razor"
+#line 11 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\DeviceManagement.razor"
 using BlazorServeApp.Services;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/groupdata")]
-    public partial class GroupData : OwningComponentBase<GroupsListService>
+    [Microsoft.AspNetCore.Components.RouteAttribute("/DeviceManagement")]
+    public partial class DeviceManagement : OwningComponentBase<GroupsListService>
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -105,8 +105,22 @@ using BlazorServeApp.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 73 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\GroupData.razor"
+#line 82 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\DeviceManagement.razor"
        
+
+    //[Parameter]
+    //public string Id { get; set; }
+    //Device device = new Device();
+
+    //protected async Task Save()
+    //{
+    //   await DeviceService.SaveAsync(device);
+    //    NavigationManager.NavigateTo("DeviceList"); //navigation link to table page after device has been added
+    //}
+    //void Cancel()
+    //{
+    //    NavigationManager.NavigateTo("DeviceList"); // navigation link to table page after cancel btn has been clicked
+    //}
 
     List<GroupsListClass> grobj;
     List<UserListClass> usrobj;
@@ -118,7 +132,7 @@ using BlazorServeApp.Services;
     {
         //base.OnInitialized();
         grobj = Service.groupsobj();
-        usrobj= Service.usersobj();
+        usrobj = Service.usersobj();
     }
 
 
@@ -128,6 +142,8 @@ using BlazorServeApp.Services;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

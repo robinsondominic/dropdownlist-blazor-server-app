@@ -1,0 +1,115 @@
+﻿@page "/DeviceManagement"
+@*@using BlazorApp1.Data*@
+@*@using CommonModels.Model*@
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
+@*@inject DeviceService DeviceService*@
+
+
+@using BlazorServeApp.Data
+@using BlazorServeApp.Models
+@using BlazorServeApp.Services
+@inherits OwningComponentBase<GroupsListService>
+
+
+<h3>Device Management Page</h3>
+
+<p>Add, edit, or delete a device.</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="IMEI">  IMEI *</label>
+            @*<input form="IMEI" class="form-control" @bind="@device.IMEI" />*@
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="User"> User *</label>
+            @*<input form="User" class="form-control" @bind="@device.User" />*@
+        <select class="form-control">
+            <option value="">-- Select User --</option>
+            @if (usrobj != null)
+            {
+                @foreach (var item in usrobj)
+                {
+                    <option value="@item.Email">@item.Email</option>
+
+                }
+            }
+        </select>
+
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="Group"> Select Group *</label>
+            @*<input form="Group" class="form-control" @bind="@device.Groups" />*@
+
+        <select class="form-control" onchange="">
+            <option value="">-- Select Group --</option>
+            @if (grobj != null)
+                @foreach (var item in grobj)
+                {
+                    <option value="@item.Groups">@item.Groups</option>
+
+                }
+            }
+        </select>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="Auhtorisation"> Auhtorisation *</label>
+            @*<input form="Auhtorisation" class="form-control" @bind="@device.Authorisation" />*@
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            @*<input type="button" class="btn btn-primary" @onclick="@Save" value="Save" />*@
+            @*<input type="button" class="btn" @onclick="@Cancel" value="Cancel" />*@
+        </div>
+    </div>
+</div>
+
+
+@code {
+
+    //[Parameter]
+    //public string Id { get; set; }
+    //Device device = new Device();
+
+    //protected async Task Save()
+    //{
+    //   await DeviceService.SaveAsync(device);
+    //    NavigationManager.NavigateTo("DeviceList"); //navigation link to table page after device has been added
+    //}
+    //void Cancel()
+    //{
+    //    NavigationManager.NavigateTo("DeviceList"); // navigation link to table page after cancel btn has been clicked
+    //}
+
+    List<GroupsListClass> grobj;
+    List<UserListClass> usrobj;
+
+    //List<UserListClass> users = new List<UserListClass>();
+
+
+    protected override void OnInitialized()
+    {
+        //base.OnInitialized();
+        grobj = Service.groupsobj();
+        usrobj = Service.usersobj();
+    }
+
+
+
+
+}
+

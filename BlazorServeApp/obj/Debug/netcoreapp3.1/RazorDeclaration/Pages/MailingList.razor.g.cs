@@ -76,28 +76,28 @@ using BlazorServeApp.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\GroupData.razor"
+#line 8 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\MailingList.razor"
 using BlazorServeApp.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\GroupData.razor"
+#line 9 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\MailingList.razor"
 using BlazorServeApp.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\GroupData.razor"
+#line 10 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\MailingList.razor"
 using BlazorServeApp.Services;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/groupdata")]
-    public partial class GroupData : OwningComponentBase<GroupsListService>
+    [Microsoft.AspNetCore.Components.RouteAttribute("/MailingList")]
+    public partial class MailingList : OwningComponentBase<GroupsListService>
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -105,29 +105,37 @@ using BlazorServeApp.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 73 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\GroupData.razor"
+#line 49 "C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\Pages\MailingList.razor"
        
 
+    //[Parameter]
+    //public string Id{ get; set; }
+    //MailingListC ml = new MailingListC();
+
+    //protected async Task Save()
+    //{
+    //    await MailingListService.SaveAsync(ml);
+    //    NavigationManager.NavigateTo("MailingListList");
+    //}
+    //        void Cancel()
+    //        {
+    //            NavigationManager.NavigateTo("MailingListList");
+    //        }
+
     List<GroupsListClass> grobj;
-    List<UserListClass> usrobj;
-
-    //List<UserListClass> users = new List<UserListClass>();
-
-
     protected override void OnInitialized()
     {
         //base.OnInitialized();
         grobj = Service.groupsobj();
-        usrobj= Service.usersobj();
+
     }
-
-
-
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

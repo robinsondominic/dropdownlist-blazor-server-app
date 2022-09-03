@@ -91,3 +91,8 @@ C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\obj\Debug\netc
 C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\obj\Debug\netcoreapp3.1\BlazorServeApp.dll
 C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\obj\Debug\netcoreapp3.1\BlazorServeApp.pdb
 C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\obj\Debug\netcoreapp3.1\BlazorServeApp.genruntimeconfig.cache
+C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\DeviceManagement.razor.g.cs
+C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\MailingList.razor.g.cs
+C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\obj\Debug\netcoreapp3.1\Razor\Pages\DeviceManagement.razor.g.cs
+C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\obj\Debug\netcoreapp3.1\Razor\Pages\MailingList.razor.g.cs
+C:\Users\Administrator\source\repos\BlazorServeApp\BlazorServeApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Blazor.HttpClient.dll
