@@ -1,0 +1,86 @@
+﻿@page "/groupdata"
+@using BlazorServeApp.Data
+@using BlazorServeApp.Models
+@using BlazorServeApp.Services
+@inherits OwningComponentBase<GroupsService>
+
+
+<h3>Group Data In Dropdown List</h3>
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <label for="Imei" class="control-label">IMEI *</label>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="User" class="control-label">User *</label>
+    </div>
+</div>
+<div class="row" style="padding-top:10px">
+    <div class="col-md-4">
+        <input type="text" name="imei" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <select class="form-control" onchange="">
+            <option value="">-- Select User --</option>
+            @*@if (usrobj != null)
+        {
+            @foreach (var item in usrobj)
+            {
+                <option value="@usrobj.Email">@usrobj.Email</option>
+
+            }
+        }*@
+        </select>
+    </div>
+</div>
+
+<div class="row" style="padding-top:50px">
+
+</div> <div class="row">
+    <div class="col-md-4">
+        <label for="Group" class="control-label">Group *</label>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Authorization" class="control-label">Authorization *</label>
+    </div>
+</div>
+<div class="row" style="padding-top:10px">
+    <div class="col-md-4">
+        <input class="form-control" type="text" name="authorization" />
+    </div>
+    <div class="col-md-4">
+        <select class="form-control" onchange="">
+            <option value="">-- Select Group --</option>
+            
+                    @foreach (var item in grobj)
+                    {
+                        <option value="@item.Groups">@item.Groups</option>
+
+                    }
+               
+        </select>
+    </div>
+</div>
+
+
+
+@code {
+
+    List<GroupsClass> grobj;
+
+
+    protected override void OnInitialized()
+    {
+        //base.OnInitialized();
+        grobj = Service.groupsobj();
+        
+    }
+
+ 
+}
